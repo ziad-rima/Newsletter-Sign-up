@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --Dark-Slate-Grey: hsl(234, 29%, 20%);
+    --Charcoal-Grey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+    font-size: 10px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    background-color: var(--White);
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto;
+    justify-items: center;
+}
+
+.form-container .image-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.form-container .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.form h1 {
+    font-size: 3.7rem;
+    margin: 2.8rem auto 2.2rem 1.2rem;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.form .hero {
+    color: var(--Dark-Slate-Grey);
+    font-size: 1.8rem;
+    margin: 0 auto 1.2rem 1.2rem;
+    font-weight: 400;
+}
+
+.form .bullet-points {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem auto 2.3rem 1.2rem;
+    max-width: 100%;
+}
+
+.bullet-points .bullet-point {
+    margin: 1.2rem auto 1.2rem 0;
+    font-size: 1.8rem; 
+    max-width: 100%;
+    display: flex;
+}
+
+.bullet-points .bullet-point p {
+    margin-left: 1rem;
+    text-align: left;
+}
+
+.email-container {
+    display: flex;
+    flex-direction: column;
+    align-self: left;
+    margin: 0 auto 1.2rem 1.2rem;
+}
+
+.email-container label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.email-container input {
+    padding: 1.6rem;
+    max-width: 100%;
+    width: 330px;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid var(--Charcoal-Grey);
+    font-size: 1.6rem;
+}
+
+.form .submit-btn {
+    align-self: center;
+    padding: 1.2rem 1.4rem;
+    width: 330px;
+    margin: 1.2rem auto 1.2rem 1.2rem;
+    font-size: 1.6rem;
+    border-radius: 6px;
+    border: 1px solid var(--Grey);
+    background-color: var(--Dark-Slate-Grey);
+    color: var(--White);
+    font-family: 'Roboto';
+}
+
+.attribution { 
+    text-align: center;
+    font-size: 1.6rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
