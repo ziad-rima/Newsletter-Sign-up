@@ -20,6 +20,21 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     background-color: var(--White);
+    display: flex;
+    flex-direction: column;
+}
+
+.input-hint.error {
+    color: var(--Tomato);
+    font-size: 1.4rem;
+    margin: .6rem 0 .5rem .5rem;
+    font-weight: 500;
+}
+
+input.error-state {
+    background-color: hsl(4, 60%, 78%);
+    border: 2px solid red;
+    color: var(--Tomato);
 }
 
 .form-container {
@@ -27,6 +42,7 @@ body {
     grid-template-columns: 1;
     grid-template-rows: auto;
     justify-items: center;
+    max-width: 1200px;
 }
 
 .form-container .image-container {
@@ -34,7 +50,7 @@ body {
     overflow: hidden;
 }
 
-.form-container .form {
+.form-container .form-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -42,21 +58,22 @@ body {
     max-width: 100%;
 }
 
-.form h1 {
+.form-section h1 {
     font-size: 3.7rem;
     margin: 2.8rem auto 2.2rem 1.2rem;
     align-self: flex-start;
     text-align: left;
 }
 
-.form .hero {
+.form-section .hero {
     color: var(--Dark-Slate-Grey);
     font-size: 1.8rem;
     margin: 0 auto 1.2rem 1.2rem;
     font-weight: 400;
+    width: 90%;
 }
 
-.form .bullet-points {
+.form-section .bullet-points {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -83,11 +100,14 @@ body {
     margin: 0 auto 1.2rem 1.2rem;
 }
 
-.email-container label {
+.email-container .label-container {
     font-size: 1.4rem;
     font-weight: 500;
     max-width: 100%;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .email-container input {
@@ -96,11 +116,15 @@ body {
     width: 330px;
     outline: none;
     border-radius: 6px;
-    border: 1px solid var(--Charcoal-Grey);
+    border: 1px solid var(--Grey);
     font-size: 1.6rem;
 }
 
-.form .submit-btn {
+.email-container input:focus {
+    border: 1px solid var(--Dark-Slate-Grey);
+}
+
+.form-container .submit-btn {
     align-self: center;
     padding: 1.2rem 1.4rem;
     width: 330px;
@@ -111,12 +135,185 @@ body {
     background-color: var(--Dark-Slate-Grey);
     color: var(--White);
     font-family: 'Roboto';
+    cursor: pointer;
+}
+
+.form-section .submit-btn:hover {
+    background-color: var(--Tomato);
+    border: 1px solid var(--White);
+}
+
+.image-container .desktop-layout {
+    display: none;
+}
+
+.image-container .mobile-layout {
+    max-width: 100%;
+}
+
+.success-message-container {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    min-height: 100vh;
+    padding: 1.2rem;
+    position: relative;
+}
+
+.success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 20%;
+}
+
+.success-message .success-image {
+    margin-left: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.success-message h1 {
+    font-size: 3.5rem;
+    margin: 1.2rem auto 2rem 1.2rem;
+}
+
+.success-message .confirmation-text {
+    font-size: 1.9rem;
+    margin-left: 1.2rem;
+}
+
+.success-message-container .dismiss-btn {
+    position: absolute;
+    bottom: 0%;
+    padding: 1.5rem;
+    margin-bottom: 2.2rem;
+    width: 300px;
+    background-color: var(--Dark-Slate-Grey);
+    color: var(--White);
+    font-size: 1.7rem;
+    border: 1px solid var(--White);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.success-message-container .dismiss-btn:hover {
+    background-color: var(--Tomato);
 }
 
 .attribution { 
     text-align: center;
     font-size: 1.6rem;
+    margin-top: 1.4rem;
 }
 .attribution a { 
     color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 420px) {
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-section {
+        margin-left: 2rem;
+    }
+
+    .form-section p {
+        width: 80%;
+    }
+}
+
+@media (min-width: 720px) {
+    body {
+        background-color: var(--Charcoal-Grey);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container .desktop-layout {
+        display: block;
+        width: 350px;
+        height: 550px;
+    }
+
+    .image-container .mobile-layout {
+        display: none;
+    }
+
+    .form-container .form-section {
+        margin: 0 1.4rem 0 1.2rem;
+    }
+
+    .form-section h1 {
+        font-size: 5rem;
+        color: var(--White);
+    }
+
+    .form-section .hero {
+        font-size: 1.9rem;
+        color: var(--White);
+    }
+
+    .bullet-points .bullet-point {
+        font-size: 1.9rem;
+        color: var(--White);
+        width: 100%;
+    }
+
+    .email-container label {
+        font-size: 1.6rem;
+        color: var(--White);
+    }
+
+    .email-container input {
+        padding: 1.8rem;
+        max-width: 100%;
+        width: 360px;
+        font-size: 1.7rem;
+    }
+
+    .form-section .submit-btn {
+        padding: 1.2rem 1.4rem;
+        width: 360px;
+        font-size: 1.8rem;
+    }
+
+    .success-message-container {
+        width: 420px;
+        height: 420px;
+        min-height: initial;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--White);
+        border-radius: 20px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+    }
+
+    .success-message-container .dismiss-btn {
+        margin-bottom: 3.4rem;
+    }
+    .attribution {
+        color: var(--White);
+    }
+
+    .attribution a {
+        color: var(--Tomato);
+    }
 }
