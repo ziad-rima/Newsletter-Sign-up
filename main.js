@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             form.reset();
             successMessage.style.display = 'none';
-            formContainer.style.display = 'grid';
+            formContainer.style.display = 'flex';
         };
        
     })
